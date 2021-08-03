@@ -1,0 +1,65 @@
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body,
+.alert {
+  margin: 0;
+  padding: 0;
+  color: #5b738b;
+}
+
+body {
+  background: #f7f7f7;
+}
+
+.card {
+  margin: 10px;
+  text-align: center;
+  padding: 40px;
+}
+
+.card i {
+  font-size: 14px;
+  color: #a4b7ca;
+}
+
+.loading {
+  height: 80px;
+  width: 80px;
+  margin: 0 auto;
+}
+
+.quote {
+  margin-bottom: 20px;
+}
+
+.quote p,
+.quote i,
+.quote h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.quote h4 {
+  color: #9ab2ca;
+}
+
+.row {
+  text-align: center;
+}
+
+.pagination {
+  margin: 0 auto;
+  display: block;
+}
+
+.btn {
+  display: inline-block;
+  margin-right: 5px;
+  height: 35px;
+  width: 40px;
+}
