@@ -1,5 +1,5 @@
 import React from "react";
-import { Alert } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import loading from "./img/loading.gif";
 
 const Results = ({ isLoaded, animeArray }) => {
@@ -9,11 +9,18 @@ const Results = ({ isLoaded, animeArray }) => {
       {isLoaded &&
         animeArray.map((item, index) => {
           return (
-            <Alert className="quote" key={index}>
-              <h4>{item.anime}</h4>
-              <p>{item.quote}</p>
-              <i>{item.character}</i>
-            </Alert>
+            <Card className="quote" key={index}>
+              <Card.Body>
+                <Card.Title>
+                  <h4>{item.anime}</h4>
+                </Card.Title>
+                <Card.Text>
+                  {item.quote}
+                  <br />
+                  <i>{item.character}</i>
+                </Card.Text>
+              </Card.Body>
+            </Card>
           );
         })}
       {!isLoaded && <img className="loading" src={loading} alt="loading" />}

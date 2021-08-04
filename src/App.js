@@ -13,21 +13,28 @@ function App() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    fetchData("naruto");
+    const query = document.getElementById("search");
+    fetchData(query.value ? query.value : "naruto");
   }, [page]);
 
   const fetchData = async (query) => {
     setIsLoaded(false);
+    console.log(page);
     try {
       const result = await axios.get(
-        `https://animechan.vercel.app/api/quotes?title=${encodeURIComponent(
+        `https://animechan.vercel.app/api/quotes/anime?title=${encodeURIComponent(
           query
         )}&page=${page}`
       );
       setAnimeArray(result.data);
     } catch (error) {
       setAnimeArray([
-        "Connecting to the API failed. Please try again in a couple of minutes.",
+        {
+          anime: "Error",
+          quote:
+            "No entries or API limit exceeded. Try with a different query in some minutes.",
+          character: "",
+        },
       ]);
     }
     setIsLoaded(true);
